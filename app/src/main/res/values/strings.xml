@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">Devsoc Sign Up</string>
+    <string name="app_name">Devsoc 2020</string>
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_timeline">Timeline</string>
+    <string name="title_speakers">Speakers</string>
+    <string name="title_qr">QR Code</string>
+    <string name="title_map">Map</string>
+    <string name="title_sponsors">Sponsors</string>
+    <string name="title_faq">FAQ</string>
+    <string name="title_us">About Us</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_timeline">
+
+    <fragment
+        android:id="@+id/navigation_timeline"
+        android:name="com.anuj.devsocsignup.ui.timeline.TimelineFragment"
+        android:label="@string/title_timeline"
+        tools:layout="@layout/fragment_timeline" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.anuj.devsocsignup.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_faq"
+        android:name="com.anuj.devsocsignup.ui.faq.FaqFragment"
+        android:label="@string/title_faq"
+        tools:layout="@layout/fragment_faq" />
+
+    <fragment
+        android:id="@+id/navigation_qr"
+        android:name="com.anuj.devsocsignup.ui.qr.QRFragment"
+        android:label="@string/title_qr"
+        tools:layout="@layout/fragment_qr" />
+
+    <fragment
+        android:id="@+id/navigation_sponsors"
+        android:name="com.anuj.devsocsignup.ui.sponsors.SponsorsFragment"
+        android:label="@string/title_sponsors"
+        tools:layout="@layout/fragment_sponsors" />
+
+    <fragment
+        android:id="@+id/navigation_speakers"
+        android:name="com.anuj.devsocsignup.ui.speakers.SpeakersFragment"
+        android:label="@string/title_speakers"
+        tools:layout="@layout/fragment_speakers" />
+
+    <fragment
+        android:id="@+id/navigation_us"
+        android:name="com.anuj.devsocsignup.ui.us.UsFragment"
+        android:label="@string/title_us"
+        tools:layout="@layout/fragment_us" />
+</navigation>
