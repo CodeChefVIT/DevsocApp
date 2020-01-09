@@ -99,6 +99,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                         if (task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(MainActivity.this, BottomNavActivity.class);
+                            startActivity(intent);
                             updateUI(user);
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -128,6 +130,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(MainActivity.this, BottomNavActivity.class);
+                            startActivity(intent);
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -206,8 +210,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         if (i == R.id.emailCreateAccountButton && validateForm()) {
             if(UserList.contains(mEmailField.getText().toString().replace(".","_"))) {
                 createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
-                Intent intent = new Intent(MainActivity.this, BottomNavActivity.class);
-                startActivity(intent);
             }
             else
                 Toast.makeText(getApplicationContext(),"Please use the email you used to register for the Hackathon",Toast.LENGTH_LONG).show();
@@ -218,12 +220,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
          else if (i == R.id.emailSignInButton && validateForm()) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-            user = mAuth.getCurrentUser();
-            if (user != null) {
-                Intent intent = new Intent(MainActivity.this, BottomNavActivity.class);
-                startActivity(intent);
-
-            }
         }
     }
 }
