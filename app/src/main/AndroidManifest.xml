@@ -13,7 +13,7 @@
         <activity
             android:name=".BottomNavActivity" android:theme="@style/AppThemeNav"></activity>
         <activity
-            android:name=".ui.SplashScreen" android:theme="@style/AppTheme">
+            android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
