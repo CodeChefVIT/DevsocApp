@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Style for "rectangle" -->
+    <!-- Add this snippet to layer-list xml in drawable. -->
+    <item android:width="376dp" android:height="912dp">
+        <shape android:shape="rectangle">
+            <gradient android:type="radial" android:useLevel="false" android:startColor="#ff030d18" android:endColor="#ff071823" android:centerX="0" android:centerY="0" android:gradientRadius="912dp" />
+        </shape>
+    </item>
+
+</selector>

@@ -19,6 +19,7 @@ public class TimelineFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_timeline, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
+
                return root;
     }
 

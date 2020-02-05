@@ -35,6 +35,7 @@
         android:id="@+id/detail"
         style="@style/ThemeOverlay.MyTextDetail"
         android:layout_marginTop="16dp"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status"
@@ -70,7 +71,8 @@
                 android:layout_marginBottom="15dp"
                 android:layout_weight="1"
                 android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="#000" />
 
             <EditText
                 android:id="@+id/fieldPassword"
@@ -80,7 +82,8 @@
                 android:layout_marginBottom="30dp"
                 android:layout_weight="1"
                 android:hint="Password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#000" />
         </LinearLayout>
 
         <LinearLayout
