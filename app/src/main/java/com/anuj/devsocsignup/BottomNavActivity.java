@@ -1,10 +1,15 @@
 package com.anuj.devsocsignup;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +24,15 @@ public class BottomNavActivity extends AppCompatActivity {
 
 //    AppBarConfiguration mAppBarConfig;
 //    ActionBarDrawerToggle toggle;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
+        Window window = getWindow();
+        Drawable bg = getDrawable(R.drawable.main_bg);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(getColor(android.R.color.transparent));
+        window.setBackgroundDrawable(bg);
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.activity_bottom_nav);

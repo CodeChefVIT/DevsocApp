@@ -15,15 +15,15 @@
 
 
     <string name="ques1">What is the venue of the Hackathon?</string>
-    <string name="ans1">A: First Phase of the Hackathon is Online that is Idea submission. Main event which is from 16th March will be conducted in Anna Auditorium, VIT Vellore.</string>
+    <string name="ans1">First Phase of the Hackathon is Online that is Idea submission. Main event which is from 16th March will be conducted in Anna Auditorium, VIT Vellore.</string>
 
     <string name="ques2">Is it necessary for the whole team to be present all the time?</string>
-    <string name="ans2">A: No, not necessarily, but at least one member should be present while pitching.</string>
+    <string name="ans2">No, not necessarily, but at least one member should be present while pitching.</string>
 
     <string name="ques3">Do I need to have specific qualifications to be part of the hackathon?</string>
-    <string name="ans3">A: If you love to code, you\'re more than welcome to participate in the hackathon.</string>
+    <string name="ans3">If you love to code, you\'re more than welcome to participate in the hackathon.</string>
 
     <string name="ques4">What is the cost of the Hackathon?</string>
-    <string name="ans4">A: There is no registration fee for the hackathon. It is absolutely free.</string>
+    <string name="ans4">There is no registration fee for the hackathon. It is absolutely free.</string>
 
 </resources>

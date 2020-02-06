@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg">
@@ -25,7 +26,7 @@
                 android:layout_marginTop="54dp"
                 android:fontFamily="@font/sf_pro_text_semibold"
                 android:letterSpacing=".2"
-                android:text="Speakers &amp; Faq"
+                android:text="Speakers"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFFFF"
                 android:textSize="24sp"
@@ -190,15 +191,16 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/sf_pro_display_med"
                 android:letterSpacing=".14"
                 android:text="@string/ans4"
                 android:textColor="#fff"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ques4" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

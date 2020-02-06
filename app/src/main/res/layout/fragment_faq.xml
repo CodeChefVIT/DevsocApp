@@ -75,6 +75,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/our_team" />
 
+            <ImageView
+                android:id="@+id/sponsors"
+                android:layout_width="900px"
+                android:layout_height="945px"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/corners_outline_back"
+                android:src="@drawable/sponsors"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSponsors" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

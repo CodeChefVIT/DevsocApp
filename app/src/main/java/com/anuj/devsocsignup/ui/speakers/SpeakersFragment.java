@@ -152,6 +152,7 @@ public class SpeakersFragment extends Fragment {
         int centreY = (canvasHeight - overlay.getHeight()) /2 ;
         canvas.drawBitmap(overlay, centreX, centreY, null);
 
+
         return combined;
     }
 }

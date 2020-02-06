@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void createAccount(String email, String password) {
-        Log.d(TAG, "cru3eeateAccount:" + email);
+        Log.d(TAG, "createAccount:" + email);
         View view=this.getCurrentFocus();
         hideKeyboard(view);
 
