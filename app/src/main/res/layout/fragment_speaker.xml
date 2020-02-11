@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/speakers"
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/common_full_open_on_phone" />
+
+            <ImageView
+                android:id="@+id/toplayer"
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                app:srcCompat="@drawable/back_translucent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="54dp"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:letterSpacing=".2"
+                android:text="Speakers"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/faq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:letterSpacing=".2"
+                android:text="Faq"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speakers" />
+
+            <TextView
+                android:id="@+id/ques1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_display_med"
+                android:letterSpacing=".14"
+                android:text="@string/ques1"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faq" />
+
+            <TextView
+                android:id="@+id/ans1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_text_light"
+                android:letterSpacing=".14"
+                android:text="@string/ans1"
+                android:textColor="#ff999b9e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ques1" />
+
+            <TextView
+                android:id="@+id/ques2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_display_med"
+                android:letterSpacing=".14"
+                android:text="@string/ques2"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ans1" />
+
+            <TextView
+                android:id="@+id/ans2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_text_light"
+                android:letterSpacing=".14"
+                android:text="@string/ans2"
+                android:textColor="#ff999b9e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ques2" />
+
+            <TextView
+                android:id="@+id/ques3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_display_med"
+                android:letterSpacing=".14"
+                android:text="@string/ques3"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ans2" />
+
+            <TextView
+                android:id="@+id/ans3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_text_light"
+                android:letterSpacing=".14"
+                android:text="@string/ans3"
+                android:textColor="#ff999b9e"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ques3" />
+
+            <TextView
+                android:id="@+id/ques4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/sf_pro_display_med"
+                android:letterSpacing=".14"
+                android:text="@string/ques4"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ans3" />
+
+            <TextView
+                android:id="@+id/ans4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/sf_pro_text_light"
+                android:letterSpacing=".14"
+                android:text="@string/ans4"
+                android:textColor="#ff999b9e"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ques4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

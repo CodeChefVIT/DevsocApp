@@ -7,16 +7,16 @@
         android:title="@string/title_timeline" />
 
     <item
-        android:id="@+id/navigation_qr"
+        android:id="@+id/navigation_speak"
         android:icon="@drawable/ic_speaker"
         android:title="@string/title_qr" />
 
     <item
-        android:id="@+id/navigation_faq"
+        android:id="@+id/navigation_us"
         android:icon="@drawable/ic_support"
         android:title="@string/title_faq" />
     <item
-        android:id="@+id/navigation_speakers"
+        android:id="@+id/navigation_user"
         android:icon="@drawable/ic_user"
         android:title="@string/title_speakers"/>
 

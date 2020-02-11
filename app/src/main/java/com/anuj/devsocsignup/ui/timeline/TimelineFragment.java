@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.anuj.devsocsignup.R;
+
+import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class TimelineFragment extends Fragment {
 
@@ -18,7 +20,10 @@ public class TimelineFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_timeline, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
+        ImageView timeline = root.findViewById(R.id.timeline_view);
+        timeline.setClipToOutline(true);
+        PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(timeline);
+        photoViewAttacher.update();
 
                return root;
     }

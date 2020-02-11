@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Devsoc 2020</string>
+    <string name="app_name">Devsoc20</string>
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>
     <string name="title_activity_bottom_nav">BottomNavActivity</string>
@@ -25,5 +25,10 @@
 
     <string name="ques4">What is the cost of the Hackathon?</string>
     <string name="ans4">There is no registration fee for the hackathon. It is absolutely free.</string>
+    
+    <string name="verification">A verification mail has been sent to your Email Account!</string>
+    <string name="resend"><u>If you didn\'t receive the mail, click here</u></string>
+    <string name="sign_up_link">New Here? Sign Up</string>
+    <string name="sign_in_link">Already Registered?</string>
 
 </resources>

@@ -1,21 +1,26 @@
 package com.anuj.devsocsignup;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,39 +30,45 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class SignUpActivity extends BaseActivity{
 
     private static final String TAG = "SignUpActivity";
 
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase, ref1;
+    private DatabaseReference mDatabase;
     private ArrayList UserList;
 
     private EditText mEmailField;
     private EditText mPasswordField;
-    private Button sign_up;
 
+    TextView sign_in_link;
+
+    MutedVideoView vv;
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        Window window = getWindow();
+        Drawable bg = getDrawable(R.drawable.main_bg);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(getColor(android.R.color.transparent));
+        window.setBackgroundDrawable(bg);
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.activity_sign_up);
 
-        mEmailField = findViewById(R.id.log_in_text);
-        mPasswordField = findViewById(R.id.password_text);
-        sign_up = findViewById(R.id.signup_button);
+        mEmailField = findViewById(R.id.sign_up_text);
+        mPasswordField = findViewById(R.id.password_signup_text);
+        Button sign_up = findViewById(R.id.signup_button);
+
+        sign_in_link = findViewById(R.id.signin_page_link);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        ref1 = mDatabase.child("users");
-
-        sign_up.setOnClickListener(v -> {
-            if (validateForm()) {
-                signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-            }
-        });
+        DatabaseReference ref1 = mDatabase.child("users");
 
         showProgressDialog();
         ref1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -76,33 +87,57 @@ public class SignUpActivity extends BaseActivity{
 
         });
         hideProgressDialog();
+
+        sign_up.setOnClickListener(v -> {
+            if (validateForm()) {
+                if(UserList.contains(mEmailField.getText().toString().replace(".","_")))
+                    createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
+                else
+                    Toast.makeText(getApplicationContext(),"Please use the email you used to register for the Hackathon",Toast.LENGTH_LONG).show();
+            }
+        });
+        vv = findViewById(R.id.videoView3);
+        vv.setOnPreparedListener(mp -> {
+            mp.setLooping(true);
+            mp.setVolume(0,0);
+        });
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sign_up);
+
+        vv.setDrawingCacheEnabled(true);
+        vv.setVideoURI(uri);
+        vv.requestFocus();
+
+        sign_in_link.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this,LoginActivity.class)));
+        SpannableString content = new SpannableString(getString(R.string.sign_in_link));
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        sign_in_link.setText(content);
+
+
     }
 
-    private void signIn(String email, String password) {
-        Log.d(TAG, "signIn:" + email);
-
-        showProgressDialog();
+    private void createAccount(String email, String password) {
+        Log.d(TAG, "createAccount:" + email);
         View view=this.getCurrentFocus();
         hideKeyboard(view);
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(SignUpActivity.this, BottomNavActivity.class);
-                            startActivity(intent);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            mPasswordField.setText(null);
-                        }
-                        hideProgressDialog();
+        showProgressDialog();
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "createUserWithEmail:success");
+                        sendEmailVerification();
+                        mDatabase.child("food").child(email.replace(".","_")).setValue(0);
+                        Intent intent = new Intent(SignUpActivity.this, CheckVerifiedActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        mPasswordField.setText(null);
                     }
+
+                    hideProgressDialog();
                 });
     }
 
@@ -128,11 +163,28 @@ public class SignUpActivity extends BaseActivity{
         return valid;
     }
 
+    private void sendEmailVerification() {
+
+        final FirebaseUser user = mAuth.getCurrentUser();
+        assert user != null;
+        user.sendEmailVerification()
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(SignUpActivity.this,
+                                "Verification email sent to " + user.getEmail(),
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.e(TAG, "sendEmailVerification", task.getException());
+                        Toast.makeText(SignUpActivity.this,
+                                "Failed to send verification email.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        startActivity(intent);
+    protected void onResume() {
+        vv.start();
+        super.onResume();
     }
 }
