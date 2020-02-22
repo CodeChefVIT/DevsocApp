@@ -1,5 +1,6 @@
 package com.anuj.devsocsignup;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -68,14 +69,35 @@ public class CheckVerifiedActivity extends BaseActivity {
         user.sendEmailVerification()
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(getApplicationContext(),
-                                "Verification email sent to " + user.getEmail(),
-                                Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(CheckVerifiedActivity.this);
+                        builder.setTitle("Success");
+                        builder.setMessage("An email has been sent to your account");
+                        builder.setCancelable(true);
+
+                        builder.setPositiveButton("Ok", (dialog, which) -> {
+                        });
+
+
+                        AlertDialog alertDialog = builder.create();
+
+                        alertDialog.show();
+//                        Toast.makeText(getApplicationContext(),
+//                                "Verification email sent to " + user.getEmail(),
+//                                Toast.LENGTH_SHORT).show();
                     } else {
                         Log.d("Verification:", "sendEmailVerification", task.getException());
-                        Toast.makeText(getApplicationContext(),
-                                "Please try after some time...",
-                                Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(CheckVerifiedActivity.this);
+                        builder.setTitle("Sorry");
+                        builder.setMessage("Please try again later");
+                        builder.setCancelable(true);
+
+                        builder.setPositiveButton("Ok", (dialog, which) -> {
+                        });
+
+
+                        AlertDialog alertDialog = builder.create();
+
+                        alertDialog.show();
                     }
                 });
     }

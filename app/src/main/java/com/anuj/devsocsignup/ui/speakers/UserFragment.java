@@ -52,7 +52,7 @@ public class UserFragment extends Fragment {
     private String username;
     private Button logout;
     private TextView user_pos;
-    MaterialLetterIcon icon;
+    private MaterialLetterIcon icon;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_user, container, false);
@@ -99,12 +99,7 @@ public class UserFragment extends Fragment {
             icon = root.findViewById(R.id.imageView3);
             icon.setLetter(username);
         }
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mapURL();
-            }
-        });
+        map.setOnClickListener(v -> mapURL());
 
 
         return root;
@@ -169,7 +164,7 @@ public class UserFragment extends Fragment {
         Bitmap bitmap = Bitmap.createBitmap(bitMatrixWidth, bitMatrixHeight, Bitmap.Config.ARGB_4444);
 
         bitmap.setPixels(pixels, 0, QRcodeWidth, 0, 0, bitMatrixWidth, bitMatrixHeight);
-        Bitmap overlay = BitmapFactory.decodeResource(getResources(), R.drawable.devsoclogo);
+        Bitmap overlay = BitmapFactory.decodeResource(getResources(), R.drawable.dev_logo_qr);
         bitmap = mergeBitmaps(overlay,bitmap);
         return bitmap;
     }
