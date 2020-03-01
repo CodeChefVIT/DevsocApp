@@ -1,5 +1,6 @@
 package com.anuj.devsocsignup;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -38,7 +39,7 @@ public class SignUpActivity extends BaseActivity{
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private ArrayList UserList;
+    private ArrayList<Object> UserList;
 
     private EditText mEmailField;
     private EditText mPasswordField;
@@ -74,7 +75,7 @@ public class SignUpActivity extends BaseActivity{
         ref1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                UserList = new ArrayList<String>();
+                UserList = new ArrayList<>();
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                     UserList.add(String.valueOf(dsp.getKey()));
                 }
@@ -92,8 +93,18 @@ public class SignUpActivity extends BaseActivity{
             if (validateForm()) {
                 if(UserList.contains(mEmailField.getText().toString().replace(".","_")))
                     createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
-                else
-                    Toast.makeText(getApplicationContext(),"Please use the email you used to register for the Hackathon",Toast.LENGTH_LONG).show();
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                    builder.setTitle("Incorrect Email ID");
+                    builder.setMessage("Please use the email you used to register for the Hackathon.");
+                    builder.setCancelable(true);
+
+                    builder.setPositiveButton("Ok", (dialog, which) -> {
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+//                    Toast.makeText(getApplicationContext(), "Please use the email you used to register for the Hackathon", Toast.LENGTH_LONG).show();
+                }
             }
         });
         vv = findViewById(R.id.videoView3);

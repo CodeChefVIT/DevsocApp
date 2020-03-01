@@ -13,19 +13,19 @@
 
     <fragment
         android:id="@+id/navigation_us"
-        android:name="com.anuj.devsocsignup.ui.faq.UsFragment"
+        android:name="com.anuj.devsocsignup.ui.us.UsFragment"
         android:label="@string/title_faq"
         tools:layout="@layout/fragment_us" />
 
     <fragment
         android:id="@+id/navigation_speak"
-        android:name="com.anuj.devsocsignup.ui.qr.SpeakerFragment"
+        android:name="com.anuj.devsocsignup.ui.speaker.SpeakerFragment"
         android:label="@string/title_qr"
         tools:layout="@layout/fragment_speaker" />
 
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.anuj.devsocsignup.ui.speakers.UserFragment"
+        android:name="com.anuj.devsocsignup.ui.user.UserFragment"
         android:label="@string/title_speakers"
         tools:layout="@layout/fragment_user" />
 

@@ -1,4 +1,4 @@
-package com.anuj.devsocsignup.ui.faq;
+package com.anuj.devsocsignup.ui.us;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -130,7 +130,7 @@ public class UsFragment extends Fragment {
         list.add(new TeamMember("HR Director", "Tanya Sharma",R.drawable.tanya_sharma));
         list.add(new TeamMember("Finance Director","Debalok Banerjee",R.drawable.debalok,"https://www.instagram.com/justdeba/"));
         list.add(new TeamMember("Projects Director","Shaswat Srivastava",R.drawable.shaswat_srivastava,"https://www.linkedin.com/in/shaswat-srivastava/"));
-        list.add(new TeamMember("Design and Media Director","Rachit Agarwal",R.drawable.rachit_agarwal,"https://www.instagram.com/rachit_agarwal1512/"));
+        list.add(new TeamMember("Design and Media Director","Rachit Agarwal",R.drawable.rachit_agarwal2,"https://www.instagram.com/rachit_agarwal1512/"));
         list.add(new TeamMember("Marketing Director", "Raghav Jhawar", R.drawable.raghav_jhavar,"https://www.instagram.com/raghavjhawar02/"));
         list.add(new TeamMember("Technical Adviser","Yash Mehrotra",R.drawable.yash_meherotra2,"https://www.linkedin.com/in/yashmehrotra9/"));
         list.add(new TeamMember("Logistics Director","Kunal Kumar",R.drawable.kunal_kumar,"https://www.instagram.com/kunal.kumar19/"));

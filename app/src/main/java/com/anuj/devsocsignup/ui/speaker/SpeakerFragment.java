@@ -1,4 +1,4 @@
-package com.anuj.devsocsignup.ui.qr;
+package com.anuj.devsocsignup.ui.speaker;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.anuj.devsocsignup.ui.speakers;
+package com.anuj.devsocsignup.ui.user;
 
 import android.content.Context;
 import android.content.Intent;
@@ -164,7 +164,7 @@ public class UserFragment extends Fragment {
         Bitmap bitmap = Bitmap.createBitmap(bitMatrixWidth, bitMatrixHeight, Bitmap.Config.ARGB_4444);
 
         bitmap.setPixels(pixels, 0, QRcodeWidth, 0, 0, bitMatrixWidth, bitMatrixHeight);
-        Bitmap overlay = BitmapFactory.decodeResource(getResources(), R.drawable.dev_logo_qr);
+        Bitmap overlay = BitmapFactory.decodeResource(getResources(), R.drawable.qrlogo2);
         bitmap = mergeBitmaps(overlay,bitmap);
         return bitmap;
     }

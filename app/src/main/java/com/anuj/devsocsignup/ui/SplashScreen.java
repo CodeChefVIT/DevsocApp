@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.VideoView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.anuj.devsocsignup.BottomNavActivity;
 import com.anuj.devsocsignup.CheckVerifiedActivity;
 import com.anuj.devsocsignup.LoginActivity;
+import com.anuj.devsocsignup.MutedVideoView;
 import com.anuj.devsocsignup.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,7 +25,7 @@ import java.util.Objects;
 public class SplashScreen extends AppCompatActivity {
 
     private FirebaseUser user;
-    VideoView vv;
+    MutedVideoView vv;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState)
