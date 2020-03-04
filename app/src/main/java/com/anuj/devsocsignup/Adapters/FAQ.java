@@ -1,9 +1,9 @@
 package com.anuj.devsocsignup.Adapters;
 
 public class FAQ {
-    String Q,A;
+    private String Q,A;
 
-    public String getQ() {
+    String getQ() {
         return Q;
     }
 
@@ -11,7 +11,7 @@ public class FAQ {
         Q = q;
     }
 
-    public String getA() {
+    String getA() {
         return A;
     }
 
