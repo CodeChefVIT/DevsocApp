@@ -31,6 +31,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 public class SignUpActivity extends BaseActivity{
@@ -47,6 +49,7 @@ public class SignUpActivity extends BaseActivity{
     TextView sign_in_link;
 
     MutedVideoView vv;
+    Date now;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -70,6 +73,7 @@ public class SignUpActivity extends BaseActivity{
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref1 = mDatabase.child("users");
+
 
         showProgressDialog();
         ref1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -139,6 +143,8 @@ public class SignUpActivity extends BaseActivity{
                         Log.d(TAG, "createUserWithEmail:success");
                         sendEmailVerification();
                         mDatabase.child("food").child(email.replace(".","_")).setValue(0);
+                        now = Calendar.getInstance().getTime();
+                        mDatabase.child("timestamp").child(email.replace(".","_")).setValue(now.toString());
                         Intent intent = new Intent(SignUpActivity.this, CheckVerifiedActivity.class);
                         startActivity(intent);
                     } else {
