@@ -28,7 +28,7 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder>
     @NonNull
     @Override
     public FaqAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.faq_element,parent,false);
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.faq_item,parent,false);
         return new ViewHolder(itemLayoutView);
 
     }
@@ -53,10 +53,6 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder>
             super(view);
             this.Ques = view.findViewById(R.id.ques);
             this.Ans = view.findViewById(R.id.ans);
-        }
-        public void showAns(){
-            if(Ans.getVisibility()==View.GONE)
-                Ans.setVisibility(View.VISIBLE);
         }
     }
 

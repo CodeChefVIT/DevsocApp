@@ -41,6 +41,7 @@ public class UsFragment extends Fragment {
         LinearLayoutManager horizontal = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         our_team.setLayoutManager(horizontal);
         our_team.setAdapter(adapter);
+
         ImageView sponsors = root.findViewById(R.id.sponsors);
         sponsors.setClipToOutline(true);
 

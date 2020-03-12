@@ -1,9 +1,11 @@
 package com.anuj.devsocsignup.Adapters;
 
-public class FAQ {
+import java.io.Serializable;
+
+public class FAQ implements Serializable {
     private String Q,A;
 
-    String getQ() {
+    public String getQ() {
         return Q;
     }
 
@@ -11,7 +13,7 @@ public class FAQ {
         Q = q;
     }
 
-    String getA() {
+    public String getA() {
         return A;
     }
 
