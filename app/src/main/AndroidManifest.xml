@@ -23,18 +23,21 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorPrimaryDark" />
 
-        <activity android:name=".CheckVerifiedActivity"></activity>
+        <activity android:name=".CheckVerifiedActivity" />
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".BottomNavActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNav" />
+            android:theme="@style/AppThemeNav"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.SplashScreen"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
