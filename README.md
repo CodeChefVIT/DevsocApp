@@ -21,19 +21,20 @@
 
 
 ## Screenshots
-<img src="https://github.com/anujkap/Devsoc_Sign_Up/blob/master/Screenshots/SS1.jpg" alt="Project Screenshots">
-<img src="https://github.com/anujkap/Devsoc_Sign_Up/blob/master/Screenshots/SS2.jpg" alt="Project Screenshots">
-<img src="https://github.com/anujkap/Devsoc_Sign_Up/blob/master/Screenshots/SS3.jpg" alt="Project Screenshots">
-<img src="https://github.com/anujkap/Devsoc_Sign_Up/blob/master/Screenshots/SS4.jpg" alt="Project Screenshots">
-<img src="https://github.com/anujkap/Devsoc_Sign_Up/blob/master/Screenshots/SS5.jpg" alt="Project Screenshots">
+<p align="center">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS5.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS4.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS1.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS2.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS3.jpg" alt="Project Screenshots" width="350px" height="615px">
+</p>
+
 
 ## Instructions to run
-
 ```
 $ git clone https://github.com/CodeChefVIT/DevsocApp
 Import project in Android Studio
 Build on Device
-
 ```
 
 ## Contributors
