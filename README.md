@@ -22,11 +22,11 @@
 
 ## Screenshots
 <p align="center">
-<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS1.jpg" alt="Project Screenshots" width="350px" height="550px">
-<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS2.jpg" alt="Project Screenshots" width="350px" height="550px">
-<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS3.jpg" alt="Project Screenshots" width="350px" height="550px">
-<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS4.jpg" alt="Project Screenshots" width="350px" height="550px">
-<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS5.jpg" alt="Project Screenshots" width="350px" height="550px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS5.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS4.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS1.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS2.jpg" alt="Project Screenshots" width="350px" height="615px">
+<img src="https://github.com/CodeChefVIT/DevsocApp/blob/master/Screenshots/SS3.jpg" alt="Project Screenshots" width="350px" height="615px">
 </p>
 
 
